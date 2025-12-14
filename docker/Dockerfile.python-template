@@ -1,0 +1,31 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PORT=8000
+
+# Fix apt para Debian trixie
+RUN set -eux; \
+    rm -f /etc/apt/apt.conf.d/docker-clean || true; \
+    apt-get update; \
+    apt-get install -y --no-install-recommends curl ca-certificates; \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt || true
+COPY . /app
+
+# usuario no-root
+RUN useradd -m app && chown -R app:app /app
+USER app
+
+# EXPOSE informativo (usa $PORT)
+EXPOSE ${PORT}
+
+# healthcheck contra la raíz (http.server no tiene /health)
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
+  CMD curl -fsS "http://127.0.0.1:${PORT}/" || exit 1
+
+# Servidor básico en el puerto $PORT
+CMD ["sh","-c","python -m http.server ${PORT}"]

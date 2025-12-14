@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  app:
+    image: ${IMAGE:?set IMAGE}
+    environment:
+      - PORT=8001
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8001/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    expose:
+      - "8001"
+  sut:
+    image: curlimages/curl:8.10.1
+    depends_on:
+      app:
+        condition: service_healthy
+    command: ["sh", "-lc", "curl -fsS http://app:8001/health && echo 'SUT OK'"]
