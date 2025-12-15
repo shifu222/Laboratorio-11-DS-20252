@@ -44,13 +44,19 @@ env:
 	@echo "TAG=$(TAG)"
 	@echo "K8S_VERSION=$(K8S_VERSION)"
 
-# BUILD 
+# BUILD
 .PHONY: build
 build:
-	@echo "[i] usando daemon de minikube para que el cluster vea la imagen"
-	@eval $$($(MINIKUBE) docker-env); set -e; \
-	$(DOCKER) build -t $(K8S_IMAGE) -f docker/Dockerfile.python-template .; \
-	echo "[OK] build in-minikube -> $(K8S_IMAGE)"
+	@if [ -n "$(REG_NOSLASH)" ]; then \
+	  echo "[i] build local (para push a registry)"; \
+	  $(DOCKER) build -t $(K8S_IMAGE) -f docker/Dockerfile.python-template .; \
+	  echo "[OK] build local -> $(K8S_IMAGE)"; \
+	else \
+	  echo "[i] usando daemon de minikube para que el cluster vea la imagen"; \
+	  eval $$($(MINIKUBE) docker-env); set -e; \
+	  $(DOCKER) build -t $(K8S_IMAGE) -f docker/Dockerfile.python-template .; \
+	  echo "[OK] build in-minikube -> $(K8S_IMAGE)"; \
+	fi
 
 .PHONY: push
 push:

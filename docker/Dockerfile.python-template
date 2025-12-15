@@ -23,9 +23,9 @@ USER app
 # EXPOSE informativo (usa $PORT)
 EXPOSE ${PORT}
 
-# healthcheck contra la raíz (http.server no tiene /health)
+# healthcheck contra /health
 HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-  CMD curl -fsS "http://127.0.0.1:${PORT}/" || exit 1
+  CMD curl -fsS "http://127.0.0.1:${PORT}/health" || exit 1
 
-# Servidor básico en el puerto $PORT
-CMD ["sh","-c","python -m http.server ${PORT}"]
+# Servidor personalizado con endpoint /health
+CMD ["python", "server.py"]
