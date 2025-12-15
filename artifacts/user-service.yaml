@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: user-service:32f5856
+          image: ghcr.io/shifu222/user-service:7af8092
           imagePullPolicy: IfNotPresent
           env:
             - name: PORT

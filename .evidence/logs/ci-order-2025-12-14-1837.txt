@@ -1,0 +1,189 @@
+SERVICE=order-service
+IMAGE=ghcr.io/shifu222/order-service:7af8092
+K8S_IMAGE=ghcr.io/shifu222/order-service:7af8092
+TAG=7af8092
+K8S_VERSION=v1.32.2
+[i] build local (para push a registry)
+[OK] build local -> ghcr.io/shifu222/order-service:7af8092
+The push refers to repository [ghcr.io/shifu222/order-service]
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+1f384a3df500: Waiting
+00a6217c5580: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+dfff024aded8: Layer already exists
+1f384a3df500: Waiting
+00a6217c5580: Layer already exists
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+1f384a3df500: Waiting
+4f4fb700ef54: Waiting
+4d1bab084ffb: Waiting
+89933f780550: Waiting
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Waiting
+e03f23c046a4: Waiting
+1854a32d9fdd: Waiting
+4d1bab084ffb: Layer already exists
+89933f780550: Layer already exists
+d4d0cdb8154f: Waiting
+67ca7b03f92e: Waiting
+1733a4cd5954: Layer already exists
+e03f23c046a4: Layer already exists
+1854a32d9fdd: Waiting
+1f384a3df500: Layer already exists
+4f4fb700ef54: Layer already exists
+67ca7b03f92e: Waiting
+1854a32d9fdd: Waiting
+d4d0cdb8154f: Pushed
+67ca7b03f92e: Pushed
+1854a32d9fdd: Pushed
+7af8092: digest: sha256:06aa269541a72d1d32a54d7598febb9ceb82293128d326c800f6c5e12ce8558f size: 856
+SBOM -> artifacts/order-service-sbom.json
+[i] cosign no encontrado (skip)
+GRYPE -> artifacts/order-service-grype.sarif (gate: fail-on high)
+Manifest -> artifacts/order-service.yaml
+[i] Asegurando minikube (k8s=v1.32.2)
+minikube status >/dev/null 2>&1 || \
+minikube start --driver=docker --kubernetes-version=v1.32.2 --cpus=4 --memory=8192
+deployment.apps/order-service unchanged
+service/order-service unchanged
+kubectl rollout status deploy/order-service -n default --timeout=180s
+deployment "order-service" successfully rolled out
+[i] smoke: order-service/default -> http://127.0.0.1:8001
+{"status":"ok"}[OK] SMOKE order-service -> 200
+[CI] OK -> order-service @ ghcr.io/shifu222/order-service:7af8092 (via registry)

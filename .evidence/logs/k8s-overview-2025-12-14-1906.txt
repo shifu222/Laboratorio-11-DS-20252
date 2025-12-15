@@ -1,0 +1,24 @@
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS        IMAGES                                   SELECTOR
+deployment.apps/guardian-api      1/1     1            1           2d21h   guardian-api      guardian-api:latest                      app=secret-guardian,component=api
+deployment.apps/order-service     1/1     1            1           127m    order-service     ghcr.io/shifu222/order-service:7af8092   app=order-service
+deployment.apps/pc4-app-nonroot   1/1     1            1           20d     pc4-app-nonroot   pc4-app-nonroot:1.0.0                    app=pc4-app-nonroot
+deployment.apps/pc4-app-root      1/1     1            1           20d     pc4-app-root      pc4-app-root:1.0.0                       app=pc4-app-root
+deployment.apps/secret-scanner    1/1     1            1           2d21h   secret-scanner    secret-scanner:latest                    app=secret-guardian,component=scanner
+deployment.apps/user-service      1/1     1            1           153m    user-service      ghcr.io/shifu222/user-service:7af8092    app=user-service
+
+NAME                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE     SELECTOR
+service/guardian-api-service      NodePort    10.97.27.201    <none>        8000:30000/TCP   2d21h   app=secret-guardian,component=api
+service/kubernetes                ClusterIP   10.96.0.1       <none>        443/TCP          20d     <none>
+service/order-service             ClusterIP   10.106.39.145   <none>        8001/TCP         127m    app=order-service
+service/pc4-app-nonroot-service   NodePort    10.104.247.59   <none>        8000:30081/TCP   20d     app=pc4-app-nonroot
+service/pc4-app-root-service      NodePort    10.104.67.98    <none>        8000:30080/TCP   20d     app=pc4-app-root
+service/secret-scanner-service    NodePort    10.99.22.168    <none>        8001:30001/TCP   2d21h   app=secret-guardian,component=scanner
+service/user-service              ClusterIP   10.106.124.66   <none>        8000/TCP         153m    app=user-service
+
+NAME                                  READY   STATUS    RESTARTS        AGE     IP            NODE       NOMINATED NODE   READINESS GATES
+pod/guardian-api-8476879c5c-d7nbf     1/1     Running   0               2d21h   10.244.0.41   minikube   <none>           <none>
+pod/order-service-6c7d956557-846ng    1/1     Running   0               28m     10.244.0.46   minikube   <none>           <none>
+pod/pc4-app-nonroot-db6cb64f9-295vc   1/1     Running   2 (2d21h ago)   15d     10.244.0.28   minikube   <none>           <none>
+pod/pc4-app-root-847d9fdd74-tgtnk     1/1     Running   4 (2d21h ago)   20d     10.244.0.27   minikube   <none>           <none>
+pod/secret-scanner-5c97857b46-mqq5z   1/1     Running   0               2d21h   10.244.0.42   minikube   <none>           <none>
+pod/user-service-5fddb6f45c-dt9x6     1/1     Running   0               8m16s   10.244.0.48   minikube   <none>           <none>
